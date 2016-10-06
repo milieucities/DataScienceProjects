@@ -3,7 +3,7 @@ var request = require('request');
 
 //Lets try to make a HTTPS GET request to modulus.io's website.
 //All we did here to make HTTPS call is changed the `http` to `https` in URL.
-request('https://milieu.io', function (error, response, body) {
+request('https://milieu.io/en/dev_sites/1822.json', function (error, response, body) {
     //Check for error
     if(error){
         return console.log('Error:', error);
@@ -15,6 +15,9 @@ request('https://milieu.io', function (error, response, body) {
     }
 
     //All is good. Print the body
-    console.log(body); // Show the HTML for the Modulus homepage.
+    var comments = body
+    for(var exKey in comments) {
+        console.log("key:"+exKey+", value:"+comments[exKey]);
+   }
 
 });
