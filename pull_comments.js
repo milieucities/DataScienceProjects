@@ -1,23 +1,7 @@
-//Load the request module
 var request = require('request');
-
-//Lets try to make a HTTPS GET request to modulus.io's website.
-//All we did here to make HTTPS call is changed the `http` to `https` in URL.
 request('https://milieu.io/en/dev_sites/1822.json', function (error, response, body) {
-    //Check for error
-    if(error){
-        return console.log('Error:', error);
-    }
-
-    //Check for right status code
-    if(response.statusCode !== 200){
-        return console.log('Invalid Status Code Returned:', response.statusCode);
-    }
-
-    //All is good. Print the body
-    var comments = body
-    for(var exKey in comments) {
-        console.log("key:"+exKey+", value:"+comments[exKey]);
-   }
-
-});
+  if (!error && response.statusCode == 200) {
+    var comment = JSON.parse(body)
+    console.log(comment)
+  }
+})
