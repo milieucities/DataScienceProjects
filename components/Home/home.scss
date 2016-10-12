@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Martel');
+
+h1 {
+  text-align: center;
+  font: 48px 'Martel';
+  margin: 0;
+  padding: 50px 0;
+}
+
+h2 {
+  text-align: center;
+  font: 24px 'Martel';
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+form {
+  width: 600px;
+  padding: 25px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  margin: 0 auto;
+  background-color: #eee;
+  font-family: 'Martel';
+  color: #444;
+  display: block;
+
+  label {
+    display: block;
+  }
+
+  input, textarea {
+    font-family: 'Martel';
+    color: #555;
+    font-size: 1rem;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+  }
+
+  textarea {
+    min-height: 100px;
+  }
+}
+
+section {
+  padding: 25px 0;
+  font-family: 'Martel';
+  width: 600px;
+  padding: 25px 0;
+  margin: 0 auto;
+  display: flex;
+
+  .index {
+    max-width: 80px;
+    min-width: 80px;
+    color: #333;
+    font-size: 30px;
+    line-height: 35px;
+  }
+
+  .title {
+    color: #333;
+    font-size: 20px;
+    padding-bottom: 15px;
+  }
+
+  .body {
+    color: #666;
+    font-size: 16px;
+  }
+}
