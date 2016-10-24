@@ -2,12 +2,7 @@
   "name": "data-science-projects",
   "version": "1.0.0",
   "scripts": {
-    "start": "per-env",
-    "start:development": "webpack-dev-server --config webpack.config.dev.js --hot --inline --content-base public/ --history-api-fallback",
-    "start:production": "npm run build && node server.bundle.js",
-    "build": "npm run build:client && npm run build:server",
-    "build:client": "webpack --config webpack.client.config.prod.js",
-    "build:server": "webpack --config webpack.server.config.prod.js"
+    "start": "webpack-dev-server --config webpack.config.dev.js --hot --inline --content-base public/ --history-api-fallback"
   },
   "dependencies": {
     "autoprefixer": "^6.3.7",
