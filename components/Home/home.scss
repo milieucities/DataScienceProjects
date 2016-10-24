@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Martel');
 
+body {
+  padding: 25px;
+}
+
+a {
+  font: 16px 'Martel';
+  text-decoration: none;
+}
+
+canvas {
+  margin: 0 auto 50px;
+  max-width: 500px;
+}
+
 h1 {
   text-align: center;
   font: 48px 'Martel';
@@ -18,8 +32,8 @@ form {
   width: 600px;
   padding: 25px;
   box-sizing: border-box;
-  border-radius: 2px;
-  margin: 0 auto;
+  border-radius: 4px;
+  margin: 50px auto;
   background-color: #eee;
   font-family: 'Martel';
   color: #444;
@@ -40,11 +54,37 @@ form {
     border-radius: 2px;
     border: 1px solid #ddd;
     background-color: #fff;
+
+    &[type='submit'] {
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   textarea {
-    min-height: 100px;
+    min-height: 150px;
   }
+}
+
+.filterContainer {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  margin: 0 auto;
+
+  a {
+    color: #555;
+    margin: 0 20px;
+
+
+    &:hover, &.selected {
+      text-decoration: underline;
+    }
+  }
+
 }
 
 section {

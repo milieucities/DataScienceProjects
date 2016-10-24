@@ -5,10 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    bundle: path.resolve(__dirname, 'index')
-  },
-  node: {
-    fs: 'empty'
+    bundle: './components/index'
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
@@ -19,12 +16,7 @@ module.exports = {
     filename: '[name].js',
   },
   plugins: [
-    new ExtractTextPlugin('[name].css'),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery'
-    })
+    new ExtractTextPlugin('[name].css')
   ],
   module: {
     loaders: [
@@ -48,9 +40,21 @@ module.exports = {
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loader: 'url'
+      },
+      {
+        test: /index\.js$/,
+        loader: 'string-replace',
+        query: {
+          search: '#! /usr/bin/env node',
+          replace: ''
+        }
       }
     ]
   },
-
+  node: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  },
   postcss: [autoprefixer]
 }

@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const path = require("path");
+const path = require('path');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const fs = require('fs');
@@ -40,6 +40,7 @@ module.exports = {
   ],
   module: {
     loaders: [
+      { test: /\.json$/, loader: 'json' },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -59,6 +60,14 @@ module.exports = {
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loader: 'url'
+      },
+      {
+        test: /index\.js$/,
+        loader: 'string-replace',
+        query: {
+          search: '#! /usr/bin/env node',
+          replace: ''
+        }
       }
     ]
   },
