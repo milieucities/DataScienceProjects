@@ -3,6 +3,8 @@ const path = require('path');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
+
 module.exports = {
   entry: {
     bundle: './components/index'
