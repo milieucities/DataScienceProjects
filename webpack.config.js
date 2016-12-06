@@ -6,11 +6,11 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   output: {
-    path: './public',
+    path: './',
     filename: 'bundle.js',
   },
   plugins: [
-    // new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin()
   ],
   module: {
     loaders: [

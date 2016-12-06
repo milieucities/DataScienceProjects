@@ -9,7 +9,7 @@ export default class extends Component {
   constructor(props) {
     super(props)
     this.alchemyLanguage = Watson.alchemy_language({
-      api_key: '03b695fd03eed4dab45e68174b70c70978134712',
+      api_key: 'c95dbf0c2f57e42d126a1cb23e419983b8441b0d',
       withCredentials: false
     });
     this.loadDevSiteComment = () => this._loadDevSiteComment()
